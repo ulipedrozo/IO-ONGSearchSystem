@@ -1,0 +1,32 @@
+================================================================================
+REPORTE DE ANÁLISIS DE ONGs
+================================================================================
+
+Fecha de generación: 2025-07-17 00:03:20
+
+Total de ONGs procesadas: 36
+
+📊 RESUMEN DE COMPLETITUD DE DATOS:
+  - Nombre: 36/36 (100.0%)
+  - Mision: 33/36 (91.7%)
+  - Servicios: 35/36 (97.2%)
+  - Contacto: 36/36 (100.0%)
+  - Ubicacion: 35/36 (97.2%)
+
+📂 CATEGORÍAS PRINCIPALES:
+  - Educación: 5 ONGs (13.9%)
+  - Desarrollo Comunitario: 4 ONGs (11.1%)
+  - Arte y Cultura: 3 ONGs (8.3%)
+  - Salud: 2 ONGs (5.6%)
+  - Protección Animal: 2 ONGs (5.6%)
+
+🏆 ONGs CON INFORMACIÓN MÁS COMPLETA:
+  - grupo scout san antonio de padua tandil (Score: 21, Categoría: educación e investigación sub-categoría: otra educación (educación no formal))
+  - luz y esperanza de azul (Score: 20, Categoría: Asistencia Social)
+  - equipo delta-trabajo teatral (azul) (Score: 20, Categoría: Arte y Cultura)
+  - banco de alimentos tandil (Score: 20, Categoría: puesto en marcha en nuestro país. se inauguro públicamente el 18 de mayo de 2002. frente al aumento de la pobreza que provocó la crisis del 2001, un grupo de ciudadanos vio en el modelo de bancos de alimentos una posible forma de luchar contra el hambre. con la ayuda del padre raúl troncoso y con el apoyo y experiencia del banco de alimentos de buenos aires, en poco más de cuatro meses se puso en funcionamiento el banco de alimentos tandil. durante cinco años funcionó en un depósito prestado. con el esfuerzo y colaboración de la comunidad, el bat fue creciendo, compraron la cámara de frío y los equipos necesarios para trabajar en el depósito, adquirieron el actual predio y construyeron el depósito y oficinas donde hoy funciona el bat. somos una ong que devuelve el valor a los alimentos que)
+  - centro amigo del no vidente azul (canva) (Score: 19, Categoría: Salud)
+
+⚠️ PROBLEMAS IDENTIFICADOS:
+  - 3 ONGs sin misión definida (8.3%)
+  - 1 ONGs sin ubicación (2.8%)

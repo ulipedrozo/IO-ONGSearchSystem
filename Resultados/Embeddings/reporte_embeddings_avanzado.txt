@@ -1,0 +1,31 @@
+================================================================================
+REPORTE DE ANÁLISIS DE EMBEDDINGS - ONGs
+================================================================================
+
+Fecha: 2025-07-17 00:11:14
+Modelo: paraphrase-multilingual-MiniLM-L12-v2
+Total ONGs: 36
+Dimensiones embeddings: (36, 384)
+
+📊 ESTADÍSTICAS DE SIMILITUD:
+Similitud promedio: 0.341
+Similitud máxima: 0.780
+Similitud mínima: 0.000
+Desviación estándar: 0.140
+
+🔗 PARES DE ONGs MÁS SIMILARES:
+  - asociación civil terapia para niños tand <-> asociación civil salir adelante conin ta (Similitud: 0.780)
+  - asociación civil terapia para niños tand <-> jano por todos (Similitud: 0.767)
+  - consejo consultivo para adultos mayores  <-> hogar de ancianos san jose (Similitud: 0.742)
+  - mascotandil <-> asociación refugio canino azuleño (arca) (Similitud: 0.739)
+  - g. a. m. a. t <-> días de luz (Similitud: 0.734)
+
+🎯 DISTRIBUCIÓN DE CLUSTERS:
+  Cluster 0: 1 ONGs (2.8%)
+  Cluster 1: 8 ONGs (22.2%)
+  Cluster 2: 1 ONGs (2.8%)
+  Cluster 3: 12 ONGs (33.3%)
+  Cluster 4: 5 ONGs (13.9%)
+  Cluster 5: 2 ONGs (5.6%)
+  Cluster 6: 3 ONGs (8.3%)
+  Cluster 7: 4 ONGs (11.1%)
