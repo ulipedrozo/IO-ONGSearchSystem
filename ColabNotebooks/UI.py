@@ -86,11 +86,11 @@ def cargar_sistema_embeddings():
         time.sleep(2)  # Simular carga
 
         # En producción, aquí cargarías tu sistema real:
-        sistema = SistemaEmbeddingsONGAvanzado()
+        sistema_embeddings = SistemaEmbeddingsONGAvanzado()
         df = pd.read_csv(csv_path)
-        sistema.ajustar(df)
+        sistema_embeddings.ajustar(df)
 
-        return df, sistema  # En producción, retornarías (df, sistema)
+        return df, sistema_embeddings  # En producción, retornarías (df, sistema)
 
 # Función simulada de búsqueda
 def buscar_ongs(query, df, top_k=5):
