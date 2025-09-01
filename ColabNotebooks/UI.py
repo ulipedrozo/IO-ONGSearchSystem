@@ -13,6 +13,9 @@ import sys
 # Importar sistema
 from Model_Enhanced import SistemaEmbeddingsONGAvanzado
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(BASE_DIR, 'ongs_procesadas.csv')
+
 # Configuración de la página
 st.set_page_config(
     page_title="Sistema de recomendación de ONGs",
@@ -83,7 +86,7 @@ def cargar_sistema_embeddings():
 
         # En producción, aquí cargarías tu sistema real:
         sistema = SistemaEmbeddingsONGAvanzado()
-        df = pd.read_csv('ongs_procesadas.csv')
+        df = pd.read_csv(csv_path)
         sistema.ajustar(df)
 
         """Carga el sistema de embeddings y datos
