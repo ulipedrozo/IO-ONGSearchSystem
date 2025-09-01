@@ -1,2 +1,13 @@
 pandas 
 plotly
+sentence-transformers
+scikit-learn
+numpy
+matplotlib
+seaborn
+transformers
+torch
+faiss-cpu
+umap-learn
+nltk
+spacy

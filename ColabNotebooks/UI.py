@@ -10,11 +10,13 @@ from datetime import datetime
 import time
 import os
 import sys
+# Importar sistema
+from sistema_embeddings import SistemaEmbeddingsONGAvanzado
 
 # Configuración de la página
 st.set_page_config(
-    page_title="Buscador Inteligente de ONGs",
-    page_icon="🤝",
+    page_title="Sistema de recomendación de ONGs",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -75,16 +77,16 @@ if 'sistema_embeddings' not in st.session_state:
 # Función para cargar el sistema (simulada para el ejemplo)
 @st.cache_resource
 def cargar_sistema_embeddings():
-    """Carga el sistema de embeddings y datos"""
+    
     with st.spinner('Cargando sistema de búsqueda inteligente...'):
         time.sleep(2)  # Simular carga
 
         # En producción, aquí cargarías tu sistema real:
-        # from sistema_embeddings_avanzado import SistemaEmbeddingsONGAvanzado
-        # sistema = SistemaEmbeddingsONGAvanzado()
-        # df = pd.read_csv('ongs_procesadas.csv')
-        # sistema.ajustar(df)
+        sistema = SistemaEmbeddingsONGAvanzado()
+        df = pd.read_csv('ongs_procesadas.csv')
+        sistema.ajustar(df)
 
+        """Carga el sistema de embeddings y datos
         # Para el ejemplo, creamos datos simulados
         df_ejemplo = pd.DataFrame({
             'nombre': [
@@ -152,15 +154,15 @@ def cargar_sistema_embeddings():
                 'Tel: 4555-4567 | rehabilitacion@ong.org',
                 'Tel: 4555-8901 | derechos@ong.org'
             ]
-        })
+        })"""
 
-        return df_ejemplo, None  # En producción, retornarías (df, sistema)
+        return df, sistema  # En producción, retornarías (df, sistema)
 
 # Función simulada de búsqueda
-def buscar_ongs_simulado(query, df, top_k=5):
-    """Simula la búsqueda semántica"""
-    # En producción usarías: sistema.buscar_ongs_similares(query, top_k)
-
+def buscar_ongs(query, sistema, top_k=5):
+    
+    
+    """Simula la búsqueda semántica
     # Para el ejemplo, hacemos una búsqueda simple por palabras clave
     query_lower = query.lower()
     scores = []
@@ -199,8 +201,13 @@ def buscar_ongs_simulado(query, df, top_k=5):
                 'ubicacion': row['ubicacion'],
                 'contacto': row['contacto'],
                 'similitud': min(row['score'] / 3, 0.99)  # Normalizar score
-            })
+            })"""
 
+    resultados = sistema.buscar_ongs_similares(
+        query, 
+        top_k=top_k,
+        umbral=0.1
+    )
     return resultados
 
 # INTERFAZ PRINCIPAL
@@ -208,7 +215,7 @@ def main():
     # Header con logo e información
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        st.markdown("# 🤝 Buscador Inteligente de ONGs")
+        st.markdown("# Sistema de recomendación de ONGs")
         st.markdown("### Encuentra la ayuda que necesitas")
 
     # Cargar sistema si no está cargado
@@ -289,7 +296,7 @@ def main():
                 df_filtrado = df_filtrado[df_filtrado['categoria'] == categoria_filtro]
 
             # Realizar búsqueda
-            resultados = buscar_ongs_simulado(query, df_filtrado)
+            resultados = buscar_ongs(query, df_filtrado)
 
         # Mostrar resultados
         st.markdown("---")
@@ -384,7 +391,7 @@ def main():
         st.markdown("""
         ### 🤖 Sistema de Búsqueda Inteligente
 
-        Este buscador utiliza **Inteligencia Artificial** para entender tu consulta y encontrar
+        Este buscador utiliza Inteligencia Artificial y Redes Neuronales de tipo Transformers para entender tu consulta y encontrar
         las organizaciones más relevantes para tus necesidades.
 
         **Características principales:**
@@ -407,7 +414,7 @@ def main():
     col1, col2, col3 = st.columns(3)
     with col2:
         st.markdown(
-            "<p style='text-align: center; color: gray;'>Desarrollado con ❤️ para conectar ayuda con quienes la necesitan</p>",
+            "<p style='text-align: center; color: gray;'>Version 1.0.0 - Investigación Operativa I - Facultad de Ciencias Exactas - UNICEN</p>",
             unsafe_allow_html=True
         )
 
