@@ -11,7 +11,7 @@ import time
 import os
 import sys
 # Importar sistema
-from sistema_embeddings import SistemaEmbeddingsONGAvanzado
+from Model_Enhanced import SistemaEmbeddingsONGAvanzado
 
 # Configuración de la página
 st.set_page_config(
