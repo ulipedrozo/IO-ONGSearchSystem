@@ -86,7 +86,7 @@ def cargar_sistema_embeddings():
 
         # En producción, aquí cargarías tu sistema real:
         sistema = SistemaEmbeddingsONGAvanzado()
-        df = pd.read_csv(csv_path)
+        df = pd.read_csv('ongs_procesadas.csv')
         sistema.ajustar(df)
 
         """Carga el sistema de embeddings y datos
