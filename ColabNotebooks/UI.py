@@ -7,6 +7,9 @@ import plotly.express as px
 from datetime import datetime
 import os
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(BASE_DIR, 'ongs_procesadas.csv')
+
 # Importar el sistema
 try:
     from Model_Enhanced import SistemaEmbeddingsONGAvanzado
@@ -48,7 +51,6 @@ def cargar_sistema():
     """Carga el sistema de embeddings"""
     try:
         # Cargar datos
-        csv_path = 'ongs_procesadas.csv'
         if not os.path.exists(csv_path):
             st.error(f"No se encontró el archivo {csv_path}")
             return None, None
