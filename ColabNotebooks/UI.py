@@ -80,7 +80,8 @@ if 'sistema_embeddings' not in st.session_state:
 # Función para cargar el sistema (simulada para el ejemplo)
 @st.cache_resource
 def cargar_sistema_embeddings():
-    
+    global sistema_embeddings, df_ongs
+
     with st.spinner('Cargando sistema de búsqueda inteligente...'):
         time.sleep(2)  # Simular carga
 
@@ -88,12 +89,12 @@ def cargar_sistema_embeddings():
         sistema = SistemaEmbeddingsONGAvanzado()
         df = pd.read_csv(csv_path)
         sistema.ajustar(df)
-        
+
         return df, sistema  # En producción, retornarías (df, sistema)
 
 # Función simulada de búsqueda
-def buscar_ongs(query, sistema, top_k=5):
-    
+def buscar_ongs(query, df, top_k=5):
+    global sistema_embeddings
     
     """Simula la búsqueda semántica
     # Para el ejemplo, hacemos una búsqueda simple por palabras clave
@@ -136,7 +137,7 @@ def buscar_ongs(query, sistema, top_k=5):
                 'similitud': min(row['score'] / 3, 0.99)  # Normalizar score
             })"""
 
-    resultados = sistema.buscar_ongs_similares(
+    resultados = sistema_embeddings.buscar_ongs_similares(
         query, 
         top_k=top_k,
         umbral=0.1
@@ -145,6 +146,8 @@ def buscar_ongs(query, sistema, top_k=5):
 
 # INTERFAZ PRINCIPAL
 def main():
+    global sistema_embeddings, df_ongs
+
     # Header con logo e información
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
@@ -153,9 +156,9 @@ def main():
 
     # Cargar sistema si no está cargado
     if not st.session_state.sistema_cargado:
-        df, sistema = cargar_sistema_embeddings()
-        st.session_state.df_ongs = df
-        st.session_state.sistema_embeddings = sistema
+        df_ongs, sistema_embeddings = cargar_sistema_embeddings()
+        st.session_state.df_ongs = df_ongs
+        st.session_state.sistema_embeddings = sistema_embeddings
         st.session_state.sistema_cargado = True
 
     # Barra lateral con información y filtros
