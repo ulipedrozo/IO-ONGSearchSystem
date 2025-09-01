@@ -88,77 +88,7 @@ def cargar_sistema_embeddings():
         sistema = SistemaEmbeddingsONGAvanzado()
         df = pd.read_csv(csv_path)
         sistema.ajustar(df)
-
-        """Carga el sistema de embeddings y datos
-        # Para el ejemplo, creamos datos simulados
-        df_ejemplo = pd.DataFrame({
-            'nombre': [
-                'Fundación Niños Felices',
-                'ONG Educación para Todos',
-                'Asociación Ayuda Alimentaria',
-                'Centro de Apoyo Familiar',
-                'Fundación Salud Comunitaria',
-                'ONG Mujeres Emprendedoras',
-                'Asociación Tercera Edad Activa',
-                'Fundación Medio Ambiente Vivo',
-                'Centro de Rehabilitación Integral',
-                'ONG Derechos Humanos'
-            ],
-            'categoria': [
-                'Infancia', 'Educación', 'Asistencia Social', 'Familia',
-                'Salud', 'Género', 'Tercera Edad', 'Medio Ambiente',
-                'Discapacidad', 'Derechos Humanos'
-            ],
-            'mision': [
-                'Brindar apoyo integral a niños en situación vulnerable',
-                'Proporcionar educación de calidad a comunidades desfavorecidas',
-                'Distribuir alimentos a familias necesitadas',
-                'Ofrecer orientación y apoyo a familias en crisis',
-                'Promover la salud preventiva en comunidades marginadas',
-                'Empoderar a mujeres a través de capacitación laboral',
-                'Mejorar la calidad de vida de adultos mayores',
-                'Proteger el medio ambiente y promover la sostenibilidad',
-                'Brindar terapias y apoyo a personas con discapacidad',
-                'Defender y promover los derechos humanos fundamentales'
-            ],
-            'servicios': [
-                'Apoyo escolar, alimentación, actividades recreativas',
-                'Clases gratuitas, tutorías, becas escolares',
-                'Comedores comunitarios, canastas de alimentos',
-                'Terapia familiar, mediación, talleres para padres',
-                'Consultas médicas gratuitas, vacunación, prevención',
-                'Cursos de oficios, microcréditos, asesoría empresarial',
-                'Actividades recreativas, cuidados, acompañamiento',
-                'Educación ambiental, reciclaje, reforestación',
-                'Fisioterapia, terapia ocupacional, inclusión laboral',
-                'Asesoría legal, defensa de casos, educación en derechos'
-            ],
-            'ubicacion': [
-                'Av. Libertador 1234, CABA',
-                'Calle Educación 567, Zona Norte',
-                'Av. Solidaridad 890, Zona Sur',
-                'Calle Familia 234, Centro',
-                'Av. Salud 456, Zona Oeste',
-                'Calle Igualdad 789, CABA',
-                'Av. Esperanza 012, Zona Norte',
-                'Calle Verde 345, Zona Sur',
-                'Av. Inclusión 678, Centro',
-                'Calle Justicia 901, CABA'
-            ],
-            'contacto': [
-                'Tel: 4555-1234 | ninosfelices@ong.org',
-                'Tel: 4555-5678 | educacion@ong.org',
-                'Tel: 4555-9012 | alimentos@ong.org',
-                'Tel: 4555-3456 | familia@ong.org',
-                'Tel: 4555-7890 | salud@ong.org',
-                'Tel: 4555-2345 | mujeres@ong.org',
-                'Tel: 4555-6789 | mayores@ong.org',
-                'Tel: 4555-0123 | ambiente@ong.org',
-                'Tel: 4555-4567 | rehabilitacion@ong.org',
-                'Tel: 4555-8901 | derechos@ong.org'
-            ]
-        })"""
-
+        
         return df, sistema  # En producción, retornarías (df, sistema)
 
 # Función simulada de búsqueda
